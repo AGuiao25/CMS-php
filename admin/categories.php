@@ -55,7 +55,7 @@ include "includes/navigation.php";
                                         <tr>
                                             <th>ID</th>
                                             <th>Category Title</th>
-                                        </tr>
+                                         </tr>
                                     </thead>
                                     <tbody>
                             <?php findAllCategories();?>   

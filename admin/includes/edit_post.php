@@ -32,7 +32,6 @@ if(isset($_POST['update_post'])) {
     $post_content = $_POST['post_content'];
     $post_tags = $_POST['post_tags'];
 
-    echo "$post_category_id";
 
     move_uploaded_file( $post_image_temp,"../images/$post_image");
 
@@ -71,7 +70,7 @@ if(isset($_POST['update_post'])) {
     $query .="post_content = '{$post_content}' ";
     $query .="WHERE post_id = {$the_post_id}";
     $result = mysqli_query($connection,  $query);
-echo "$query";
+
     // confirmResult($result);
     if(!$result) {
         die("QUERY FAILED ." . mysqli_error($connection));
@@ -109,7 +108,7 @@ echo "$query";
                            
                                     <div class="form-group"> 
                                     <label for="post_author">Post Author</label>
-                                        <input  value="<?php echo $post_author ?>"  type="text" class="form-control" name="post_author">
+                                        <input  value="<?php echo  $post_author ?>"  type="text" class="form-control" name="post_author">
                                     </div>
                              
                                     <div class="form-group"> 
