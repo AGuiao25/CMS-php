@@ -10,7 +10,11 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
+<<<<<<< HEAD
                 <a class="navbar-brand" href="./index.php">Homepage</a>
+=======
+                <a class="navbar-brand" href="index.php">Home</a>
+>>>>>>> 6e76b74c8f2e0530549f2316b3dca3e16e03f9d1
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">

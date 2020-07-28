@@ -52,7 +52,11 @@
                         <a href="./categories.php"><i class="fa fa-fw fa-wrench"></i> Categories </a>
                     </li>
               
+<<<<<<< HEAD
                     <li class="">
+=======
+                    <li class>
+>>>>>>> 6e76b74c8f2e0530549f2316b3dca3e16e03f9d1
                         <a href="./comments.php"><i class="fa fa-fw fa-file"></i>Comments</a>
                     </li>
                     <li>
@@ -66,7 +70,11 @@
                             </li>
                         </ul>
                     </li>
+<<<<<<< HEAD
                     <li class="">
+=======
+                    <li class>
+>>>>>>> 6e76b74c8f2e0530549f2316b3dca3e16e03f9d1
                         <a href="blank-page.html"><i class="fa fa-fw fa-file"></i>Profile</a>
                     </li>
              

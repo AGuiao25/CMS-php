@@ -15,6 +15,7 @@ include "includes/navigation.php";
 
             <!-- Blog Entries Column -->
             <div class="col-md-8">
+<<<<<<< HEAD
             <?php 
             if(isset($_GET['category'])) {
                 $post_category_id = $_GET['category'];
@@ -23,6 +24,15 @@ include "includes/navigation.php";
             ?>
             <?php
         $query = "SELECT * FROM posts WHERE  post_category_id = $post_category_id ";
+=======
+            <?php
+   if(isset($_GET['category'])) {
+    $post_category_id = $_GET['category'];
+}
+
+
+        $query = "SELECT * FROM posts WHERE post_category_id = $post_category_id";
+>>>>>>> 6e76b74c8f2e0530549f2316b3dca3e16e03f9d1
         $post_query = mysqli_query($connection,$query);
 
         while($row = mysqli_fetch_assoc($post_query)) {
@@ -31,7 +41,11 @@ include "includes/navigation.php";
             $post_author = $row['post_author'];
             $post_date = $row['post_date'];
             $post_image = $row['post_image'];
+<<<<<<< HEAD
             $post_content = substr($row['post_content'],0,100);  ?>
+=======
+            $post_content = $row['post_content'];   ?>
+>>>>>>> 6e76b74c8f2e0530549f2316b3dca3e16e03f9d1
      
 
      
@@ -42,7 +56,11 @@ include "includes/navigation.php";
 
                 <!-- First Blog Post -->
                 <h2>
+<<<<<<< HEAD
                     <a href="post.php?p_id=<?php echo $post_id; ?>"><?php echo $post_title; ?></a>
+=======
+                    <a href="#"><?php echo $post_title; ?></a>
+>>>>>>> 6e76b74c8f2e0530549f2316b3dca3e16e03f9d1
                 </h2>
                 <p class="lead">
                     by <a href="index.php"><?php echo $post_author; ?></a>
@@ -58,6 +76,7 @@ include "includes/navigation.php";
         <?php } ?>
                
 
+<<<<<<< HEAD
                 <!-- Pager -->
                 <ul class="pager">
                     <li class="previous">
@@ -67,6 +86,9 @@ include "includes/navigation.php";
                         <a href="#">Newer &rarr;</a>
                     </li>
                 </ul>
+=======
+
+>>>>>>> 6e76b74c8f2e0530549f2316b3dca3e16e03f9d1
 
             </div>
    <?php  include "includes/sidebar.php";?>
