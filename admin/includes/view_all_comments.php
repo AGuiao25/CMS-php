@@ -3,54 +3,46 @@
                                     <tr>
                                         <th>Id</th>
                                         <th>Author</th>
-                                        <th>Title</th>
-                                        <th>Category</th>
+                                        <th>Comment</th>
+                                        <th>Email</th>
                                         <th>Status</th>
-                                        <th>Image</th>
-                                        <th>Tags</th>
-                                        <th>Comments</th>
+                                        <th>In Response to</th>
                                         <th>Date</th>
+                                        <th>Approve</th>
+                                        <th>Unapprove</th>
+                                        <th>Delete</th>
                                     </tr>
                                 </thead>
                                 <tbody>
 
 <?php 
-$query = "SELECT * FROM posts";
-$query_post = mysqli_query($connection, $query);
-while($row = mysqli_fetch_assoc($query_post)){
-    $post_id = $row['post_id'];
-    $post_title = $row['post_title'];
-    $post_author = $row['post_author'];
-    $post_date = $row['post_date'];
-    $post_image = $row['post_image'];
-    $post_comment_count = $row['post_comment_count'];
-    $post_status = $row['post_status'];
-    $post_tags = $row['post_tags'];
-    $post_category_id = $row['post_category_id']; ?>
+$query = "SELECT * FROM comments";
+$select_comments= mysqli_query($connection, $query);
+while($row = mysqli_fetch_assoc($select_comments)){
+    $comment_id= $row['comment_id'];
+    $comment_post_id = $row['comment_post_id'];
+    $comment_author = $row['comment_author'];
+    $comment_email= $row['comment_email'];
+    $comment_content = $row['comment_content'];
+    $comment_status = $row['comment_status'];
+    $comment_date = $row['comment_date'];
+    ?>
 
 
 
 
                                 <tr>
-                                    <td><?php echo $post_id; ?></td>
-                                    <td><?php echo $post_author; ?></td>
-                                    <td><?php echo $post_title; ?></td>
-                                    <?php
-                                         $query = "SELECT * FROM categories WHERE cat_id = {$post_category_id}";
-                                         $select_categories= mysqli_query($connection,  $query);
-                                         while($row= mysqli_fetch_assoc( $select_categories )) {  
-                                             $cat_id = $row['cat_id'];
-                                             $cat_title = $row['cat_title'];
-                                            echo "<td>{$cat_title} </td>";
-                                         }
-                                    ?>
-                                    <td><?php echo $post_status; ?></td>
-                                    <?php echo "<td> <img width='100' src='../images/$post_image' alt='images'></td>"?>
-                                    <td><?php echo $post_tags; ?></td>
-                                    <td><?php echo $post_comment_count; ?></td>
+                                    <td><?php echo $comment_id; ?></td>
+                                    <td><?php echo $comment_author; ?></td>
+                                    <td><?php echo $comment_email; ?></td>
+                        
+                                    <td><?php echo $comment_content; ?></td>
+                                    <td><?php echo $comment_status; ?></td>
+                                    <td><?php echo $comment_date; ?></td>
                                     <td><?php echo $post_date; ?></td>
-                                    <?php echo "<td><a href='posts.php?delete={$post_id}'>Delete</a></td>"; ?>
-                                    <?php echo "<td><a href='posts.php?source=edit_post&p_id={$post_id}'>Edit</a></td>"; ?>
+                                    <?php echo "<td><a href='comments.php?approve={$comment_id}'>Approve</a></td>"; ?>
+                                    <?php echo "<td><a href='comments.php?inapprove={$comment_id}'>Unapprove</a></td>"; ?>
+                                    <?php echo "<td><a href='comments.php?delete={  $comment_id}'>Delete</a></td>"; ?>
                             </tr>
                             
 
