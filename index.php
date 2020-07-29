@@ -25,16 +25,12 @@ include "includes/navigation.php";
             $post_author = $row['post_author'];
             $post_date = $row['post_date'];
             $post_image = $row['post_image'];
-<<<<<<< HEAD
             $post_content = substr($row['post_content'],0,100); 
 
              
              
              ?>
             
-=======
-            $post_content = substrng($row['post_content'],0,100);  ?>
->>>>>>> 6e76b74c8f2e0530549f2316b3dca3e16e03f9d1
      
 
      
