@@ -29,15 +29,9 @@
                 $category_name_query = mysqli_query($connection, $query);
            
                 while($row= mysqli_fetch_assoc($category_name_query)) {
-<<<<<<< HEAD
                     $category_title = $row['cat_title'];    
                     $category_id = $row['cat_id'];          
                     echo "<li><a href='category.php?category= $category_id'>{$category_title}</</li>";
-=======
-                    $category_name = $row['cat_title'];       
-                    $category_id = $row['cat_id'];       
-                    echo "<li><a href='category.php?category= $category_id'>{$category_name}</</li>";
->>>>>>> 6e76b74c8f2e0530549f2316b3dca3e16e03f9d1
                 }
                 ?>
                          
