@@ -52,29 +52,21 @@
                         <a href="./categories.php"><i class="fa fa-fw fa-wrench"></i> Categories </a>
                     </li>
               
-<<<<<<< HEAD
                     <li class="">
-=======
-                    <li class>
->>>>>>> 6e76b74c8f2e0530549f2316b3dca3e16e03f9d1
                         <a href="./comments.php"><i class="fa fa-fw fa-file"></i>Comments</a>
                     </li>
                     <li>
                         <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Users <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="demo" class="collapse">
                             <li>
-                                <a href="#">Dropdown Item</a>
+                                <a href="users.php">View All Users</a>
                             </li>
                             <li>
-                                <a href="#">Dropdown Item</a>
+                                <a href="users.php?source=add_users">Add Users</a>
                             </li>
                         </ul>
                     </li>
-<<<<<<< HEAD
                     <li class="">
-=======
-                    <li class>
->>>>>>> 6e76b74c8f2e0530549f2316b3dca3e16e03f9d1
                         <a href="blank-page.html"><i class="fa fa-fw fa-file"></i>Profile</a>
                     </li>
              
