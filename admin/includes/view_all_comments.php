@@ -32,7 +32,6 @@ while($row = mysqli_fetch_assoc($query_comments)){
 
 
 
-
                                 <tr>
                                     <td><?php echo $comment_id; ?></td>
                                     <td><?php echo $commentt_author ; ?></td>
@@ -84,5 +83,11 @@ if(isset($_GET['delete'])) {
     $query = "DELETE FROM comments WHERE comment_id = {$the_comment_id}";
     $delete_query = mysqli_query($connection, $query);
      header("Location: comments.php");
+
+
+    if(!$delete_query) {
+        echo "Query Failed." . mysqli_error($connection);
+    }
+
 }
 ?>
