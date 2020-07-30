@@ -38,19 +38,6 @@ while($row = mysqli_fetch_assoc($query_comments)){
                                     <td><?php echo  $comment_content; ?></td>
                                     <td><?php echo $comment_email; ?></td>
                                     <td><?php echo $comment_status; ?></td>
-                                    <?php 
-$query = "SELECT * FROM posts WHERE post_id = $comment_post_id" ;
-$query_post_id = mysqli_query($connection, $query);
-
-while($row= mysqli_fetch_assoc($query_post_id)) {
-    $post_id = $row['post_id'];
-    $post_title = $row['post_title'];
-    echo "<td><a href='../post.php?p_id= $post_id'>$post_title</a></td>";
-}
-
-
-?>
-                                    
                                     <td><?php echo $comment_date; ?></td>
                                     <?php echo "<td><a href='comments.php?approve=$comment_id'>Approve</a></td>"; ?>
                                     <?php echo "<td><a href='comments.php?unapprove=$comment_id'>Unapprove</a></td>"; ?>
@@ -97,9 +84,10 @@ if(isset($_GET['delete'])) {
     $delete_query = mysqli_query($connection, $query);
      header("Location: comments.php");
 
+
     if(!$delete_query) {
         echo "Query Failed." . mysqli_error($connection);
     }
-}
 
+}
 ?>
