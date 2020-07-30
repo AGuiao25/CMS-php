@@ -1,4 +1,5 @@
 <?php include "db.php"?>
+<link href="css/blog-post.css"> 
  <!-- Blog Sidebar Widgets Column -->
             <div class="col-md-4 ">
                 <!-- Blog Search Well -->
@@ -11,6 +12,25 @@
                             <button name="submit" class="btn btn-default" type="submit">
                                 <span class="glyphicon glyphicon-search"></span>
                         </button>
+                        </span>
+                    </div>
+                    </form> 
+                    </div>
+                
+
+
+
+                    <div class="well">
+                    <form action="includes/login.php" method="post"> 
+                    <div class="form-group">
+                    <label for="username">Username</label>
+                        <input name="username" type="text" class="form-control" placeholder="Username">
+                    </div>
+                    <div class="form-group">
+                    <label for="user_password">Password</label>
+                        <input name="password" type="password" class="form-control" placeholder="Password">
+                        <span class="input-group-btn" >
+                        <button class="btn btn-primary" name="login" type="submit">log in</button>
                         </span>
                     </div>
                     </form> 
