@@ -113,7 +113,33 @@ if(isset($_POST['update_post'])) {
                              
                                     <div class="form-group"> 
                                     <label for="post_status">Post Status</label>
-                                        <input value="<?php echo $post_status?>"  type="text" class="form-control" name="post_status">
+                                    <?php
+                                        $query = "SELECT * FROM posts";
+                                        $select_posts = mysqli_query($connection, $query);
+                                        while($row = mysqli_fetch_assoc($select_posts)) {
+
+                                            $post_status = $row['post_status'];
+                                        }
+
+                                            ?>
+                                      
+                                  
+                                    <select name="post_status" id="">
+                                    <?php 
+                                    echo "<option value=> $post_status </option>";
+
+                                    if($post_status =='draft') {
+                                        echo "<option value='published'>Published</option>";
+                                    } else {
+                                        echo " <option value='draft'>Draft</option>";
+                                    }
+                                    
+                                    ?>
+                                     
+                                    </select>
+                            
+                                   
+                                 
                                     </div>
                                  
                                     <div class="form-group"> 
@@ -128,7 +154,7 @@ if(isset($_POST['update_post'])) {
                                 
                                     <div class="form-group">  
                                     <label for="post_content">Post Content</label>
-                                        <textarea  class="form-control" name="post_content" id="" cols="30" rows="10"><?php echo  $post_content?> </textarea>
+                                        <textarea  class="form-control" name="post_content" id="body" cols="30" rows="10"><?php echo  $post_content?> </textarea>
                                     </div>
                            
                                     

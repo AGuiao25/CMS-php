@@ -3,7 +3,7 @@ if(isset($_POST['create_post'])) {
     $post_title = $_POST['post_title'];
     $post_author = $_POST['post_author'];
     $post_date = date('d-m-y');
-    // $post_comment_count = 4;
+    $post_comment_count = 0;
     $post_status = $_POST['post_status'];
     $post_tags = $_POST['post_tags'];
     $post_content = $_POST['post_content'];
@@ -14,8 +14,8 @@ if(isset($_POST['create_post'])) {
 
     move_uploaded_file( $post_image_temp,"../images/$post_image");
    
-    $query = "INSERT INTO posts(post_title, post_category_id, post_author, post_date, post_image, post_content, post_tags, post_comment_count, post_status) ";
-    $query .= "VALUES ('{$post_title}','{$post_category_id}','{$post_author}',now(),'{$post_image}','{ $post_content}','{$post_tags}', '{$post_status}')" ;
+    $query = "INSERT INTO posts(post_title, post_category_id, post_author, post_date, post_image, post_content, post_tags,post_comment_count,post_status) ";
+    $query .= "VALUES ('{$post_title}','{$post_category_id}','{$post_author}',now(),'{$post_image}','{ $post_content}','{$post_tags}', '$post_comment_count','{$post_status}')" ;
 
     $add_post_query = mysqli_query($connection, $query);
 
@@ -57,7 +57,11 @@ if(isset($_POST['create_post'])) {
                              
                                     <div class="form-group"> 
                                     <label for="post_status">Post Status</label>
-                                        <input type="text" class="form-control" name="post_status">
+                                    <select name="post_status" id="">
+                                        <option value="published">published</option>
+                                        <option value="draft">draft</option>
+                                    
+                                    </select>
                                     </div>
                                  
                                     <div class="form-group"> 
@@ -72,7 +76,7 @@ if(isset($_POST['create_post'])) {
                                 
                                     <div class="form-group">  
                                     <label for="post_content">Post Content</label>
-                                        <textarea  class="form-control" name="post_content" id="" cols="30" rows="10"> </textarea>
+                                        <textarea  class="form-control" name="post_content" id="body" cols="30" rows="10"> </textarea>
                                     </div>
                            
                                     

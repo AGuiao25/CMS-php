@@ -24,7 +24,7 @@ if(isset($_POST['create_user'])) {
         echo die("QUERY FAILED." . mysqli_error($connection));
     }
 
-
+echo "User has been created: " ," ".  "<a href='users.php'>See all users here</a>"; 
 }
 
 ?>
