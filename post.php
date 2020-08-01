@@ -52,7 +52,6 @@ include "includes/navigation.php";
                 <img class="img-responsive" src="http://placehold.it/900x300" alt="">
                 <hr>
                 <p><?php echo $post_content; ?></p>
-                <a class="btn btn-primary" href="#">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
 
                 <hr>
         <?php } ?>
@@ -92,7 +91,7 @@ if(isset($_POST['create_comment'])) {
                         </div>
                     <div class="form-group">
                     <label for="Content">Content</label>
-                            <textarea class="form-control" rows="3" name="comment_content"></textarea>
+                            <textarea class="form-control" rows="3" name="comment_content" id="body"></textarea>
                         </div>
                         <button type="submit" name="create_comment" class="btn btn-primary">Submit</button>
                     </form>
